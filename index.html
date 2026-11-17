@@ -311,6 +311,57 @@ dialog.sheet h4 small{color:var(--muted);font-weight:400;font-size:12px}
 .pz-combo{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);font-size:34px;font-weight:900;color:#ff7a45;text-shadow:0 2px 0 #fff,0 0 12px #fff;opacity:0;pointer-events:none}
 .pz-combo.show{animation:combo .8s ease}
 @keyframes combo{0%{opacity:0;transform:translate(-50%,-30%) scale(.6)}30%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}100%{opacity:0;transform:translate(-50%,-90%) scale(1)}}
+
+/* 뛰기 */
+.pet.running{animation:run .32s ease-in-out infinite}
+@keyframes run{0%,100%{transform:translateY(0) rotate(0) scale(1.03,.97)}25%{transform:translateY(-9%) rotate(-5deg) scale(.97,1.04)}50%{transform:translateY(0) rotate(0) scale(1.04,.96)}75%{transform:translateY(-7%) rotate(4deg) scale(.98,1.03)}}
+.dust{position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;opacity:.85;box-shadow:0 0 0 2px #e7d6c4 inset;animation:dust .6s ease-out forwards;pointer-events:none}
+@keyframes dust{to{transform:translate(var(--dx),-10px) scale(2);opacity:0}}
+
+/* 러그 */
+.rug{z-index:0}
+.rug-none .rug{display:none}
+.rug-sky .rug{background:#a9daf2;opacity:.8}
+.rug-stripe .rug{border-radius:10px;background:repeating-linear-gradient(90deg,#ffd6a5 0 18px,#fff3e0 18px 36px);opacity:.9}
+.rug-check .rug{border-radius:10px;background:#fff;background-image:conic-gradient(#cdeedd 25%,#fff 0 50%,#cdeedd 0 75%,#fff 0);background-size:28px 28px;opacity:.95;box-shadow:0 0 0 4px #9fd2b5 inset}
+.rug-paw .rug{background:#ffe0ea radial-gradient(circle at 50% 60%,#f7a8c0 5px,transparent 6px) 0 0/30px 26px;opacity:.95}
+.rug-rainbow .rug{background:radial-gradient(ellipse at center,#fff 0 18%,#c3a6ff 18% 32%,#7fb0e0 32% 46%,#8fd488 46% 60%,#ffd166 60% 74%,#ff9f7a 74% 88%,#ff7aa2 88% 100%);opacity:.85}
+.rug-flower .rug{border-radius:46% 54% 42% 58% / 60% 44% 56% 40%;background:#fff3a8 radial-gradient(circle,#ffb3c7 30%,transparent 32%) 0 0/34px 34px;box-shadow:0 0 0 5px #ffb3c7 inset;opacity:.95}
+.swatch .rug{left:50%;bottom:12%;width:84%;height:70%;opacity:1}
+.swatch.rug-pink .rug{background:#f7b9a6}
+
+/* 미니게임 연출 */
+.fx-layer{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:5}
+#minigame .fx-layer{position:fixed}
+.spark{position:absolute;width:9px;height:9px;border-radius:50%;margin:-4px 0 0 -4px;animation:spark .65s cubic-bezier(.2,.7,.3,1) forwards}
+.spark.emo{width:auto;height:auto;font-size:16px;background:none!important;margin:-10px 0 0 -8px}
+@keyframes spark{to{transform:translate(var(--tx),var(--ty)) scale(.3);opacity:0}}
+.score-pop{position:absolute;transform:translate(-50%,-50%);font-weight:900;font-size:22px;color:#ff7a45;text-shadow:0 2px 0 #fff,0 0 6px #fff;animation:spop .9s ease-out forwards;white-space:nowrap}
+.score-pop.big{font-size:28px;color:#e0508a}
+.score-pop.hot{font-size:32px;color:#ff4d4d}
+@keyframes spop{0%{opacity:0;transform:translate(-50%,-30%) scale(.5)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.25)}100%{opacity:0;transform:translate(-50%,-150%) scale(1)}}
+.pz-combo{display:flex;flex-direction:column;align-items:center;line-height:1.1;white-space:nowrap}
+.pz-combo small{font-size:18px;color:#fff;background:#ff7aa2;border-radius:999px;padding:2px 10px;text-shadow:none}
+.pz-combo[data-lv="3"]{color:#ff5c8a;font-size:40px}
+.pz-combo[data-lv="4"]{color:#c44dff;font-size:46px}
+.pz-combo[data-lv="5"],.pz-combo[data-lv="6"]{font-size:52px;background:linear-gradient(90deg,#ff5c5c,#ffb347,#ffe14d,#5cd65c,#4da6ff,#a64dff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 2px 0 #fff)}
+.pz-big{position:absolute;left:50%;top:84%;transform:translate(-50%,-50%);font-size:24px;font-weight:900;color:#fff;background:linear-gradient(90deg,#ff7aa2,#ffb36b);padding:6px 14px;border-radius:999px;opacity:0;pointer-events:none;white-space:nowrap;box-shadow:0 4px 12px #ff7aa255}
+.pz-big.show{animation:combo .9s ease}
+#pz-score{display:inline-block}
+.bump{animation:bump .25s ease}
+@keyframes bump{50%{transform:scale(1.35);color:#ff7a45}}
+.shake-s{animation:shk .25s linear}
+.shake-l{animation:shk .4s linear}
+@keyframes shk{0%,100%{translate:0 0}20%{translate:-5px 2px}40%{translate:5px -2px}60%{translate:-4px -1px}80%{translate:3px 2px}}
+#puzzle.flash::after,#minigame.hurt::after{content:"";position:fixed;inset:0;pointer-events:none;animation:flash .45s ease-out forwards}
+#puzzle.flash::after{background:radial-gradient(circle,#fff0 30%,#ffd16688)}
+#minigame.hurt::after{background:radial-gradient(circle,#fff0 40%,#4da6ff66)}
+@keyframes flash{from{opacity:1}to{opacity:0}}
+#puzzle.hurry .pz-timebar i{background:#ff5c5c;animation:blink .5s infinite}
+#puzzle.hurry #pz-time{color:#ff5c5c}
+.mg-streak{position:fixed;left:50%;top:22%;transform:translateX(-50%);font-size:28px;font-weight:900;color:#ff7a45;text-shadow:0 2px 0 #fff;opacity:0;pointer-events:none;z-index:6;white-space:nowrap}
+.mg-streak.show{animation:combo .8s ease}
+.snd{font-size:16px;margin-left:6px;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -415,6 +466,7 @@ dialog.sheet h4 small{color:var(--muted);font-weight:400;font-size:12px}
         <button data-tab="furniture" class="on">가구</button>
         <button data-tab="wall">벽지</button>
         <button data-tab="floor">바닥</button>
+        <button data-tab="rug">러그</button>
         <button id="btn-deco-done" class="primary">완료</button>
       </div>
       <div id="deco-list" class="deco-list"></div>
@@ -438,6 +490,7 @@ dialog.sheet h4 small{color:var(--muted);font-weight:400;font-size:12px}
       <button data-tab="furniture">가구</button>
       <button data-tab="wall">벽지</button>
       <button data-tab="floor">바닥</button>
+      <button data-tab="rug">러그</button>
       <button data-tab="seed">씨앗</button>
     </div>
     <div id="shop-list" class="item-grid"></div>
@@ -457,9 +510,11 @@ dialog.sheet h4 small{color:var(--muted);font-weight:400;font-size:12px}
     <div class="mg-head">
       <span>🎾 <b id="mg-score">0</b></span>
       <span id="mg-lives">❤️❤️❤️</span>
-      <span>⏱ <b id="mg-time">40</b></span>
+      <span>⏱ <b id="mg-time">40</b> <button class="snd" data-sound>🔊</button></span>
     </div>
     <canvas id="mg-canvas"></canvas>
+    <div id="mg-fx" class="fx-layer"></div>
+    <div id="mg-streak" class="mg-streak"></div>
     <div id="mg-overlay" class="mg-overlay">
       <h2>공받기</h2>
       <p>좌우로 끌거나 ← → 키로 움직여서<br>떨어지는 공을 받아요!</p>
@@ -527,12 +582,14 @@ dialog.sheet h4 small{color:var(--muted);font-weight:400;font-size:12px}
   <section id="puzzle" hidden>
     <div class="mg-head">
       <span>⭐ <b id="pz-score">0</b></span>
-      <span>⏱ <b id="pz-time">60</b></span>
+      <span>⏱ <b id="pz-time">60</b> <button class="snd" data-sound>🔊</button></span>
     </div>
     <div class="pz-timebar"><i id="pz-timebar"></i></div>
     <div class="pz-wrap">
       <div id="pz-board" class="pz-board"></div>
+      <div id="pz-fx" class="fx-layer"></div>
       <div id="pz-combo" class="pz-combo"></div>
+      <div id="pz-big" class="pz-big"></div>
     </div>
     <div id="pz-overlay" class="mg-overlay"></div>
   </section>
@@ -773,7 +830,17 @@ const SHOP = {
     { id: "marble",     name: "대리석",    price: 45 },
   ],
 };
-const SHOP_KO = { food: "음식", toy: "장난감", furniture: "가구", wall: "벽지", floor: "바닥" };
+SHOP.rug = [
+  { id: "pink",    name: "핑크 원형",   price: 0 },
+  { id: "none",    name: "러그 없음",   price: 0 },
+  { id: "sky",     name: "하늘 원형",   price: 25 },
+  { id: "stripe",  name: "줄무늬 사각", price: 30 },
+  { id: "check",   name: "체크 사각",   price: 30 },
+  { id: "paw",     name: "발자국 무늬", price: 40 },
+  { id: "rainbow", name: "무지개",      price: 45 },
+  { id: "flower",  name: "꽃 모양",     price: 50 },
+];
+const SHOP_KO = { food: "음식", toy: "장난감", furniture: "가구", wall: "벽지", floor: "바닥", rug: "러그" };
 const findItem = (cat, id) => SHOP[cat].find((x) => x.id === id);
 
 // 예전 저장 데이터에 새 항목 채우기
@@ -788,6 +855,9 @@ function migrate(s) {
   s.floors ??= ["wood"];
   s.wall ??= "cream";
   s.floor ??= "wood";
+  s.rugs ??= ["pink", "none"];
+  s.rug ??= "pink";
+  s.sound ??= true;
   s.best ??= 0;
   s.upg ??= {};
   s.pending ??= 0;
@@ -803,7 +873,7 @@ function migrate(s) {
 // 분당 변화량
 const DECAY = {
   awake:  { hunger: -1.2, fun: -1.0, clean: -0.5, energy: -0.6 },
-  asleep: { hunger: -0.5, fun: -0.2, clean: -0.2, energy: +12.0 },
+  asleep: { hunger: -0.5, fun: -0.2, clean: -0.2, energy: +36.0 },
 };
 const MAX_OFFLINE_MIN = 60 * 24;
 
@@ -1018,7 +1088,7 @@ function floatFx(emoji, n = 3) {
 
 function applyMinutes(min) {
   const d = { ...(state.sleeping ? DECAY.asleep : DECAY.awake) };
-  if (state.sleeping && hasPlaced("basket")) d.energy = 19.5;
+  if (state.sleeping && hasPlaced("basket")) d.energy = 58.5;
   // 강화: 튼튼한 체력(모든 감소), 자동 급식기(배고픔 감소)
   const sturdy = 1 - (state.upg?.sturdy || 0) * 0.08, feeder = 1 - (state.upg?.feeder || 0) * 0.15;
   STATS.forEach((k) => { if (d[k] < 0) d[k] *= sturdy * (k === "hunger" ? feeder : 1); });
@@ -1154,12 +1224,41 @@ function zzz() {
   fx.appendChild(el); setTimeout(() => el.remove(), 2500);
 }
 
-function wander() {
-  if (!state || state.sleeping || Date.now() < busyUntil) return;
-  const x = 25 + Math.random() * 50;
+// 방 안에서 x%로 뛰어가기 (먼지 폴폴)
+function runTo(x, speed = 1) {
   const cur = parseFloat(petWrap.style.left || "50");
+  const dist = Math.abs(x - cur);
+  if (dist < 3) return 0;
+  const dur = Math.max(0.45, dist * 0.022 / speed);
   petEl.classList.toggle("flip", x > cur);
+  petWrap.style.transition = `left ${dur}s linear, width .8s ease`;
   petWrap.style.left = x + "%";
+  petEl.classList.add("running");
+  clearInterval(runTo.dust); clearTimeout(runTo.t);
+  runTo.dust = setInterval(() => dust(x > cur), 140);
+  runTo.t = setTimeout(() => { petEl.classList.remove("running"); clearInterval(runTo.dust); }, dur * 1000);
+  return dur * 1000;
+}
+function dust(right) {
+  const r = petWrap.getBoundingClientRect(), rr = room.getBoundingClientRect();
+  const el = document.createElement("span"); el.className = "dust";
+  el.style.left = (r.left - rr.left + r.width * (right ? 0.22 : 0.78)) + "px";
+  el.style.top = (r.bottom - rr.top - 14) + "px";
+  el.style.setProperty("--dx", (right ? -1 : 1) * (10 + Math.random() * 14) + "px");
+  fx.appendChild(el); setTimeout(() => el.remove(), 600);
+}
+function wander() {
+  if (!state || state.sleeping || walking() || Date.now() < busyUntil) return;
+  const cur = parseFloat(petWrap.style.left || "50");
+  if (Math.random() < 0.2) {           // 가끔 신나서 방 끝까지 우다다
+    const far = cur < 50 ? 78 : 22;
+    const t = runTo(far, 1.8);
+    busyUntil = Date.now() + t + 1200;
+    setTimeout(() => runTo(50, 1.6), t + 250);
+    return;
+  }
+  const x = 22 + Math.random() * 56;
+  Math.abs(x - cur) > 15 ? runTo(x) : null;
 }
 
 const ACTIONS = {
@@ -1181,7 +1280,11 @@ const ACTIONS = {
     const ball = document.createElement("span"); ball.className = "ball";
     ball.textContent = toy.ico;
     fx.appendChild(ball); setTimeout(() => ball.remove(), 1100);
-    anim("hop", 1000); floatFx("💕"); say(pick(lines().play));
+    // 공을 쫓아 뛰어갔다가 물고 돌아오기
+    const t = runTo(78, 1.8) || 400;
+    busyUntil = Date.now() + t + 1800;
+    setTimeout(() => { anim("hop", 600); runTo(45, 1.4); }, t + 200);
+    floatFx("💕"); say(pick(lines().play));
     state.coins += 2; gainXp(8);
   },
   wash() {
@@ -1221,6 +1324,7 @@ petEl.addEventListener("click", () => {
 
 function startGame(fresh) {
   migrate(state);
+  syncSoundBtns();
   state.stage = stageOf();   // 자리 비운 사이 자란 건 조용히 반영
   petEl.src = IMG(sprite());
   petWrap.dataset.stage = state.stage;
@@ -1279,6 +1383,7 @@ function owned(cat, id) {
   if (cat === "furniture") return state.furn.includes(id);
   if (cat === "wall") return state.walls.includes(id);
   if (cat === "floor") return state.floors.includes(id);
+  if (cat === "rug") return state.rugs.includes(id);
   return false;
 }
 
@@ -1289,7 +1394,7 @@ function renderShop() {
   SHOP[shopTab].forEach((it) => {
     const has = owned(shopTab, it.id);
     const el = document.createElement("div"); el.className = "item";
-    const pic = shopTab === "wall" || shopTab === "floor" ? swatch(shopTab, it.id)
+    const pic = shopTab === "wall" || shopTab === "floor" || shopTab === "rug" ? swatch(shopTab, it.id)
       : shopTab === "furniture" ? `<img class="fimg big" src="${FURN_ART[it.id].url}" alt="">` : `<span class="ico">${it.ico}</span>`;
     const cnt = shopTab === "food" ? `<span class="cnt">가방에 ${state.food[it.id] || 0}개</span>`
       : shopTab === "seed" ? `<span class="cnt">${state.seeds[it.id] || 0}개 있음</span>`
@@ -1309,7 +1414,8 @@ function buy(cat, it) {
   if (cat === "furniture") { state.furn.push(it.id); placeItem(it.id); }
   if (cat === "wall") { state.walls.push(it.id); state.wall = it.id; }
   if (cat === "floor") { state.floors.push(it.id); state.floor = it.id; }
-  const msg = { seed: "🌱 텃밭에 심어 보세요", food: "가방에 넣었어요", toy: "놀아주기에 바로 써요", furniture: "방에 놓았어요! 꾸미기에서 옮길 수 있어요", wall: "벽지를 바꿨어요", floor: "바닥을 바꿨어요" }[cat];
+  if (cat === "rug") { state.rugs.push(it.id); state.rug = it.id; }
+  const msg = { rug: "러그를 바꿨어요", seed: "🌱 텃밭에 심어 보세요", food: "가방에 넣었어요", toy: "놀아주기에 바로 써요", furniture: "방에 놓았어요! 꾸미기에서 옮길 수 있어요", wall: "벽지를 바꿨어요", floor: "바닥을 바꿨어요" }[cat];
   toast(`${it.ico || "✨"} ${it.name} 구매! ${msg}`);
   applyRoom(); renderShop(); render(); save();
 }
@@ -1361,8 +1467,8 @@ function placeItem(id) {
 }
 
 function applyRoom() {
-  room.className = room.className.replace(/\b(wall|floor)-\S+/g, "").trim();
-  room.classList.add("wall-" + state.wall, "floor-" + state.floor);
+  room.className = room.className.replace(/\b(wall|floor|rug)-\S+/g, "").trim();
+  room.classList.add("wall-" + state.wall, "floor-" + state.floor, "rug-" + state.rug);
   furnBox.innerHTML = "";
   state.placed.forEach((p) => {
     const it = findItem("furniture", p.id); if (!it) return;
@@ -1427,7 +1533,7 @@ function renderDeco() {
       });
     });
   } else {
-    const owned = decoTab === "wall" ? state.walls : state.floors;
+    const owned = { wall: state.walls, floor: state.floors, rug: state.rugs }[decoTab];
     SHOP[decoTab].filter((x) => owned.includes(x.id)).forEach((it) => {
       add(`${swatch(decoTab, it.id)}${it.name}`, state[decoTab] === it.id, () => {
         state[decoTab] = it.id; applyRoom(); renderDeco(); save();
@@ -1436,6 +1542,55 @@ function renderDeco() {
     if (owned.length < SHOP[decoTab].length) add(`<b>🛒</b>더 사기`, false, () => { shopTab = decoTab; renderShop(); shopDlg.showModal(); });
   }
 }
+
+// ---------- 효과음 (WebAudio로 직접 만든 짧은 소리) ----------
+let actx = null;
+function sfx(kind, n = 0) {
+  if (!state?.sound) return;
+  try {
+    actx ??= new (window.AudioContext || window.webkitAudioContext)();
+    const t0 = actx.currentTime;
+    const tone = (f, dt, dur, type = "sine", vol = 0.12, f2) => {
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = type; o.frequency.setValueAtTime(f, t0 + dt);
+      if (f2) o.frequency.exponentialRampToValueAtTime(f2, t0 + dt + dur);
+      g.gain.setValueAtTime(0, t0 + dt); g.gain.linearRampToValueAtTime(vol, t0 + dt + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.001, t0 + dt + dur);
+      o.connect(g).connect(actx.destination); o.start(t0 + dt); o.stop(t0 + dt + dur + 0.02);
+    };
+    const scale = [523, 587, 659, 784, 880, 1047, 1175, 1319];
+    if (kind === "pop") { const f = scale[Math.min(n, 7)]; tone(f, 0, 0.12, "triangle", 0.14); tone(f * 1.5, 0.05, 0.12, "sine", 0.08); }
+    if (kind === "swap") tone(300, 0, 0.08, "sine", 0.06, 500);
+    if (kind === "bad") { tone(220, 0, 0.15, "square", 0.05, 150); }
+    if (kind === "catch") tone(scale[Math.min(n, 7)], 0, 0.1, "triangle", 0.12);
+    if (kind === "big") [0, 0.07, 0.14].forEach((d, i) => tone(scale[i * 2 + 2], d, 0.18, "triangle", 0.12));
+    if (kind === "end") [0, 0.12, 0.24, 0.36].forEach((d, i) => tone([523, 659, 784, 1047][i], d, 0.25, "triangle", 0.13));
+  } catch {}
+}
+document.querySelectorAll("[data-sound]").forEach((b) => b.addEventListener("click", () => {
+  state.sound = !state.sound; save(); syncSoundBtns(); if (state.sound) sfx("catch", 3);
+}));
+function syncSoundBtns() { document.querySelectorAll("[data-sound]").forEach((b) => (b.textContent = state.sound ? "🔊" : "🔇")); }
+
+// 화면 위 파티클 (layer: 붙일 요소, x/y: layer 기준 px)
+function burst(layer, x, y, colors, n = 8, emoji) {
+  for (let i = 0; i < n; i++) {
+    const el = document.createElement("span");
+    el.className = "spark" + (emoji && i % 3 === 0 ? " emo" : "");
+    if (emoji && i % 3 === 0) el.textContent = emoji;
+    else el.style.background = colors[i % colors.length];
+    const a = (Math.PI * 2 * i) / n + Math.random() * 0.6, d = 30 + Math.random() * 40;
+    el.style.left = x + "px"; el.style.top = y + "px";
+    el.style.setProperty("--tx", Math.cos(a) * d + "px"); el.style.setProperty("--ty", Math.sin(a) * d - 10 + "px");
+    layer.appendChild(el); setTimeout(() => el.remove(), 700);
+  }
+}
+function scorePop(layer, x, y, txt, cls = "") {
+  const el = document.createElement("span"); el.className = "score-pop " + cls; el.textContent = txt;
+  el.style.left = x + "px"; el.style.top = y + "px";
+  layer.appendChild(el); setTimeout(() => el.remove(), 900);
+}
+function shake(el, strong) { el.classList.remove("shake-s", "shake-l"); void el.offsetWidth; el.classList.add(strong ? "shake-l" : "shake-s"); }
 
 // ---------- 공받기 미니게임 ----------
 const MG = { el: $("#minigame"), cv: $("#mg-canvas"), running: false };
@@ -1479,7 +1634,7 @@ function startMg() {
   if (state.stats.energy < 20) { quitMg(); return say(pick(lines().tooTired)); }
   $("#mg-overlay").hidden = true;
   resizeMg();
-  Object.assign(MG, { running: true, items: [], score: 0, lives: 3, t: MG_TIME, spawn: 0, px: MG.w / 2, target: MG.w / 2, flip: false, last: performance.now(), pops: [] });
+  Object.assign(MG, { running: true, streak: 0, items: [], score: 0, lives: 3, t: MG_TIME, spawn: 0, px: MG.w / 2, target: MG.w / 2, flip: false, last: performance.now(), pops: [] });
   requestAnimationFrame(loopMg);
 }
 const setTarget = (clientX) => { const r = MG.cv.getBoundingClientRect(); MG.target = clientX - r.left; };
@@ -1515,8 +1670,26 @@ function loopMg(now) {
     it.y += it.v * dt; it.rot += dt * 3;
     if (!it.done && it.y > catchY && it.y < catchY + 40 && Math.abs(it.x - MG.px) < MG.pw * 0.5) {
       it.done = true;
-      if (it.bad) { MG.lives--; MG.pops.push({ x: it.x, y: catchY, txt: "앗!", t: 0.8, bad: true }); }
-      else { MG.score += it.pts; MG.pops.push({ x: it.x, y: catchY, txt: "+" + it.pts, t: 0.8 }); }
+      const r = MG.cv.getBoundingClientRect(), lr = $("#mg-fx").getBoundingClientRect();
+      const fx0 = it.x + r.left - lr.left, fy0 = catchY + r.top - lr.top;
+      if (it.bad) {
+        MG.lives--; MG.streak = 0; sfx("bad"); shake(MG.el, true);
+        MG.el.classList.remove("hurt"); void MG.el.offsetWidth; MG.el.classList.add("hurt");
+        MG.pops.push({ x: it.x, y: catchY, txt: "앗!", t: 0.8, bad: true });
+        burst($("#mg-fx"), fx0, fy0, ["#7fc4e8", "#a9daf2"], 8);
+      } else {
+        MG.streak++;
+        const bonus = MG.streak % 5 === 0 ? 2 : 0;
+        MG.score += it.pts + bonus;
+        MG.pops.push({ x: it.x, y: catchY, txt: "+" + (it.pts + bonus), t: 0.8 });
+        sfx(bonus ? "big" : "catch", Math.min(MG.streak, 7));
+        burst($("#mg-fx"), fx0, fy0, ["#ffd166", "#ff8fb1", "#8fd488"], it.pts >= 3 ? 14 : 8, it.pts >= 3 ? "⭐" : "✨");
+        if (MG.streak >= 3) {
+          const s = $("#mg-streak"); s.textContent = `${MG.streak} 연속!${bonus ? " +2 보너스" : ""}`;
+          s.classList.remove("show"); void s.offsetWidth; s.classList.add("show");
+        }
+        if (bonus) shake(MG.el, false);
+      }
     }
   });
   MG.items = MG.items.filter((it) => !it.done && it.y < MG.h + 40);
@@ -1543,7 +1716,10 @@ function drawMg() {
   if (MG.img && MG.img.complete && MG.img.naturalWidth) {
     const w = MG.pw, h = w * MG.img.naturalHeight / MG.img.naturalWidth;
     c.fillStyle = "rgba(60,90,30,.18)"; c.beginPath(); c.ellipse(MG.px, MG.h - 8, w * 0.4, 8, 0, 0, Math.PI * 2); c.fill();
-    c.save(); c.translate(MG.px, MG.h - 6 - h / 2); if (MG.flip) c.scale(-1, 1);
+    // 움직일 때는 통통 뛰는 모습
+    const spd = Math.min(1, Math.abs((MG.target ?? MG.px) - MG.px) / 30), ph = performance.now() / 70;
+    const bob = MG.running ? Math.abs(Math.sin(ph)) * 10 * spd : 0, tilt = MG.running ? Math.sin(ph) * 0.08 * spd : 0;
+    c.save(); c.translate(MG.px, MG.h - 6 - h / 2 - bob); c.rotate(tilt); if (MG.flip) c.scale(-1, 1);
     c.drawImage(MG.img, -w / 2, -h / 2, w, h); c.restore();
     c.fillStyle = "#000";
   }
@@ -1554,7 +1730,7 @@ function drawMg() {
 }
 
 function endMg() {
-  MG.running = false;
+  MG.running = false; sfx("end");
   const earned = MG.score;
   const record = earned > state.best;
   if (record) state.best = earned;
@@ -2065,8 +2241,10 @@ function clearSel() { if (pzSel) pzSel.el.classList.remove("sel"); pzSel = null;
 async function trySwap(a, b) {
   if (PZ.busy || !PZ.running) return;
   PZ.busy = true;
+  sfx("swap");
   swapCells(a, b); await wait(180);
   if (!findMatches().size) {
+    sfx("bad");
     a.el.classList.add("shake"); b.el.classList.add("shake");
     swapCells(a, b); await wait(200);
     a.el.classList.remove("shake"); b.el.classList.remove("shake");
@@ -2081,10 +2259,22 @@ async function resolveBoard() {
   let combo = 0, hit;
   while ((hit = findMatches()).size) {
     combo++;
-    const gain = hit.size * 10 * combo;
+    const big = hit.size >= 4;
+    const gain = hit.size * 10 * combo + (big ? 50 : 0);
     PZ.score += gain;
     $("#pz-score").textContent = PZ.score;
+    bumpScore();
+    sfx(big ? "big" : "pop", combo - 1);
     if (combo > 1) comboFx(combo);
+    // 터지는 칸마다 반짝이, 가운데에 점수
+    const cell = PZ.board.clientWidth / PZ.N; let sx = 0, sy = 0;
+    hit.forEach((t) => {
+      const x = (t.c + 0.5) * cell, y = (t.r + 0.5) * cell; sx += x; sy += y;
+      burst($("#pz-fx"), x, y, [PZ_TILES[t.t].bg, "#fff", "#ffd166"], big ? 10 : 6, combo >= 3 || big ? "✨" : null);
+    });
+    scorePop($("#pz-fx"), sx / hit.size, sy / hit.size, "+" + gain, combo >= 3 ? "hot" : big ? "big" : "");
+    if (big) bigFx(hit.size);
+    if (combo >= 3 || big) shake(PZ.board, combo >= 4 || hit.size >= 5);
     hit.forEach((t) => t.el.classList.add("pop"));
     await wait(230);
     hit.forEach((t) => { PZ.g[t.r][t.c] = null; t.el.remove(); });
@@ -2106,10 +2296,20 @@ async function resolveBoard() {
   }
   if (!hasMoves()) { toast("🔀 바꿀 곳이 없어서 섞었어요"); newBoard(); }
 }
+const COMBO_WORDS = ["", "", "좋아요!", "멋져요!", "대단해요!", "환상적이에요!", "전설이에요!"];
 function comboFx(n) {
   const el = $("#pz-combo");
-  el.textContent = `${n} 콤보!`; el.classList.remove("show"); void el.offsetWidth; el.classList.add("show");
+  el.innerHTML = `<small>${COMBO_WORDS[Math.min(n, 6)]}</small>${n} 콤보!`;
+  el.dataset.lv = Math.min(n, 6);
+  el.classList.remove("show"); void el.offsetWidth; el.classList.add("show");
+  if (n >= 4) { PZ.el.classList.remove("flash"); void PZ.el.offsetWidth; PZ.el.classList.add("flash"); }
 }
+function bigFx(size) {
+  const el = $("#pz-big");
+  el.textContent = size >= 5 ? `${size}개 한 번에! +50` : "4개 연결! +50";
+  el.classList.remove("show"); void el.offsetWidth; el.classList.add("show");
+}
+function bumpScore() { const s = $("#pz-score"); s.classList.remove("bump"); void s.offsetWidth; s.classList.add("bump"); }
 
 function startPuzzle() {
   if (state.stats.energy < 20) { PZ.el.hidden = true; return say(pick(lines().tooTired)); }
@@ -2122,6 +2322,7 @@ function startPuzzle() {
     PZ.t--;
     $("#pz-time").textContent = Math.max(0, PZ.t);
     $("#pz-timebar").style.width = Math.max(0, (PZ.t / PZ.T) * 100) + "%";
+    PZ.el.classList.toggle("hurry", PZ.t <= 10 && PZ.t > 0);
     if (PZ.t <= 0) { clearInterval(PZ.timer); if (!PZ.busy) endPuzzle(); }
   }, 1000);
   $("#pz-timebar").style.width = "100%";
@@ -2130,6 +2331,9 @@ function startPuzzle() {
 function endPuzzle() {
   if (!PZ.running) return;
   PZ.running = false; clearInterval(PZ.timer); clearSel();
+  PZ.el.classList.remove("hurry"); sfx("end");
+  const fb = $("#pz-fx"), w = PZ.board.clientWidth;
+  for (let i = 0; i < 6; i++) setTimeout(() => burst(fb, Math.random() * w, Math.random() * w * 0.6, ["#ff7aa2", "#ffd166", "#7fb0e0", "#8fd488"], 12, "🎉"), i * 120);
   const coins = Math.floor(PZ.score / 40);
   const record = PZ.score > (state.bestPuzzle || 0);
   if (record) state.bestPuzzle = PZ.score;
