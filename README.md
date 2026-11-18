@@ -5,13 +5,14 @@
 
 ▶ **게임 하기:** [게임 링크](https://jinhyunji.github.io/Mongglehouse/)
 
-<img width="496" height="754" alt="스크린샷 2026-11-18 오후 5 13 42" src="https://github.com/user-attachments/assets/129b0ac0-5399-4d7d-949f-98724e3e7627" />
 ## 이런 걸 할 수 있어요
 - 밥 주기, 놀아 주기, 씻기기, 재우기, 쓰다듬기
 - 실제 하루가 지날 때마다 아기 → 청소년 → 어른으로 자라요
 - 상점, 방 꾸미기, 옷 입히기, 재주 가르치기
 - 산책, 텃밭, 저금통, 미니게임(공받기·펫 퍼즐)
 - 매일 출석 보상과 오늘의 미션
+
+<img width="496" height="754" alt="스크린샷 2026-11-18 오후 5 13 42" src="https://github.com/user-attachments/assets/129b0ac0-5399-4d7d-949f-98724e3e7627" />
 
 ## 🖥 데스크톱 펫 (몽글펫)
 <img width="1600" height="1000" alt="desktop-pet" src="https://github.com/user-attachments/assets/d2da7b83-171d-4368-a5e8-ebc31fafb933" />
