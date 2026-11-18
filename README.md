@@ -12,7 +12,8 @@
 - 산책, 텃밭, 저금통, 미니게임(공받기·펫 퍼즐)
 - 매일 출석 보상과 오늘의 미션
 
-<img width="496" height="754" alt="스크린샷 2026-11-18 오후 5 13 42" src="https://github.com/user-attachments/assets/129b0ac0-5399-4d7d-949f-98724e3e7627" />
+<img width="780" height="1688" alt="game" src="https://github.com/user-attachments/assets/66b30680-52cf-44e5-87d2-523d6129f082" />
+
 
 ## 🖥 데스크톱 펫 (몽글펫)
 <img width="1600" height="1000" alt="desktop-pet" src="https://github.com/user-attachments/assets/d2da7b83-171d-4368-a5e8-ebc31fafb933" />
