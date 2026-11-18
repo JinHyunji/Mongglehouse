@@ -1087,7 +1087,7 @@ function migrate(s) {
 // 분당 변화량
 const DECAY = {
   awake:  { hunger: -1.2, fun: -1.0, clean: -0.5, energy: -0.6 },
-  asleep: { hunger: -0.5, fun: -0.2, clean: -0.2, energy: +36.0 },
+  asleep: { hunger: -0.5, fun: -0.2, clean: -0.2, energy: +180.0 },
 };
 const MAX_OFFLINE_MIN = 60 * 24;
 
@@ -1309,7 +1309,7 @@ function floatFx(emoji, n = 3) {
 
 function applyMinutes(min) {
   const d = { ...(state.sleeping ? DECAY.asleep : DECAY.awake) };
-  if (state.sleeping && hasPlaced("basket")) d.energy = 58.5;
+  if (state.sleeping && hasPlaced("basket")) d.energy = 292.5;
   // 강화: 튼튼한 체력(모든 감소), 자동 급식기(배고픔 감소)
   const sturdy = 1 - (state.upg?.sturdy || 0) * 0.08, feeder = 1 - (state.upg?.feeder || 0) * 0.15;
   STATS.forEach((k) => { if (d[k] < 0) d[k] *= sturdy * (k === "hunger" ? feeder : 1); });
