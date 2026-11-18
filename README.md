@@ -2,7 +2,7 @@
 
 강아지, 고양이, 오리 중 한 친구를 입양해서 키우는 2D 웹 게임이에요. 설치 없이 브라우저에서 바로 할 수 있어요.
 
-▶ **게임 하기:** https://jinhyunji.github.io/mongglehouse/
+▶ **게임 하기:** [게임 링크](https://jinhyunji.github.io/mongglehouse/)
 
 ## 이런 걸 할 수 있어요
 - 밥 주기, 놀아 주기, 씻기기, 재우기, 쓰다듬기
