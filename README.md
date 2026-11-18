@@ -1,5 +1,5 @@
 # 몽글몽글 펫하우스 🐾
-<img width="1280" height="640" alt="banner" src="https://github.com/user-attachments/assets/d6534b24-7316-4776-b31c-f09d1bb6cd72" />
+<img width="1000" height="500" alt="banner" src="https://github.com/user-attachments/assets/d6534b24-7316-4776-b31c-f09d1bb6cd72" />
 
 강아지, 고양이, 오리 중 한 친구를 입양해서 키우는 2D 웹 게임이에요. 설치 없이 브라우저에서 바로 할 수 있어요.
 
@@ -12,11 +12,11 @@
 - 산책, 텃밭, 저금통, 미니게임(공받기·펫 퍼즐)
 - 매일 출석 보상과 오늘의 미션
 
-<img width="231" height="500" alt="game" src="https://github.com/user-attachments/assets/c9947d2f-59b0-47c7-b135-ce6c5b3dd90f" />
+<img width="370" height="800" alt="game" src="https://github.com/user-attachments/assets/c9947d2f-59b0-47c7-b135-ce6c5b3dd90f" />
 
 
 ## 🖥 데스크톱 펫 (몽글펫)
-<img width="1600" height="1000" alt="desktop-pet" src="https://github.com/user-attachments/assets/d2da7b83-171d-4368-a5e8-ebc31fafb933" />
+<img width="1000" height="625" alt="desktop-pet" src="https://github.com/user-attachments/assets/d2da7b83-171d-4368-a5e8-ebc31fafb933" />
 
 게임에서 키우는 펫을 바탕화면에 띄워 주는 앱이에요. 다른 창 위를 돌아다니고, 클릭하면 쓰다듬을 수 있어요.
 
