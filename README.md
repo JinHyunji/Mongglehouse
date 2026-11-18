@@ -1,9 +1,11 @@
 # 몽글몽글 펫하우스 🐾
+<img width="1280" height="640" alt="banner" src="https://github.com/user-attachments/assets/d6534b24-7316-4776-b31c-f09d1bb6cd72" />
 
 강아지, 고양이, 오리 중 한 친구를 입양해서 키우는 2D 웹 게임이에요. 설치 없이 브라우저에서 바로 할 수 있어요.
 
 ▶ **게임 하기:** [게임 링크](https://jinhyunji.github.io/Mongglehouse/)
 
+<img width="496" height="754" alt="스크린샷 2026-11-18 오후 5 13 42" src="https://github.com/user-attachments/assets/129b0ac0-5399-4d7d-949f-98724e3e7627" />
 ## 이런 걸 할 수 있어요
 - 밥 주기, 놀아 주기, 씻기기, 재우기, 쓰다듬기
 - 실제 하루가 지날 때마다 아기 → 청소년 → 어른으로 자라요
@@ -12,6 +14,8 @@
 - 매일 출석 보상과 오늘의 미션
 
 ## 🖥 데스크톱 펫 (몽글펫)
+<img width="1600" height="1000" alt="desktop-pet" src="https://github.com/user-attachments/assets/d2da7b83-171d-4368-a5e8-ebc31fafb933" />
+
 게임에서 키우는 펫을 바탕화면에 띄워 주는 앱이에요. 다른 창 위를 돌아다니고, 클릭하면 쓰다듬을 수 있어요.
 
 - **받기:** [Releases](https://github.com/JinHyunji/mongglehouse/releases)에서 맥(Apple 칩 / 인텔) 또는 윈도우용 파일을 받아요
